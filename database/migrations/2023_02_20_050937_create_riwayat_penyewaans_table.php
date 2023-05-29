@@ -19,9 +19,10 @@ return new class extends Migration
             $table->foreign('id_penyewa')->references('id')->on('users');
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users');
-            $table->string('no_sewa', 50);
+            $table->string('no_invoice', 25)->unique();
             $table->dateTime('tgl_sewa');
             $table->dateTime('tgl_kembali');
+            $table->integer('durasi');
             $table->integer('total');
             $table->integer('pajak');
             $table->integer('dibayar');

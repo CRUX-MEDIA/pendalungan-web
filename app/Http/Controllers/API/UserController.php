@@ -66,7 +66,8 @@ class UserController extends Controller
         $user = User::where('email', $request->email)->first();
         $success['token'] = $user->createToken('Pendalungan')->accessToken;
         $success['uuid'] = $user->uuid;
-
+        $success['id'] = $user->id;
+        
         if($success) {
             if (password_verify($request->password, $user->password)) {
                 return response()->json([
@@ -123,13 +124,14 @@ class UserController extends Controller
             ], 400);
         }
 
-        $user = User::where('uuid', $request->uuid)->first();
+        $user = User::join('level', 'users.id_level', '=', 'level.id_level')
+        ->where('uuid', $request->uuid)->first();
         $data['uuid'] = $user->uuid;
         $data['name'] = $user->name;
         $data['email'] = $user->email;
         $data['hp'] = $user->hp;
         $data['alamat'] = $user->alamat;
-        $data['level'] = $user->level;
+        $data['level'] = $user->nama_level;
 
         if($user){
             return response()->json([

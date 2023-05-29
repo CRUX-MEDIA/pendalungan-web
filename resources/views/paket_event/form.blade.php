@@ -13,8 +13,14 @@
                     <input type="hidden" id="id" name="id"/>
                     <div class="row">
                         <div class="col mb-3">
+                            <label for="kode_paket" class="form-label">Kode Paket</label>
+                            <input type="text" id="kode_paket" name="kode_paket" class="form-control" autofocus required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col mb-3">
                             <label for="nama_paket" class="form-label">Nama Paket</label>
-                            <input type="text" id="nama_paket" name="nama_paket" class="form-control" autofocus required />
+                            <input type="text" id="nama_paket" name="nama_paket" class="form-control" required />
                         </div>
                     </div>
                     <div class="row">

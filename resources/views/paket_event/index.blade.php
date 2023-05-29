@@ -26,6 +26,7 @@
                         <thead class="thead-light">
                         <tr>
                             <th>No</th>
+                            <th>Kode</th>
                             <th>Nama</th>
                             <th>Harga</th>
                             <th>Aksi</th>
@@ -100,6 +101,7 @@
                         $('.modal-title').text('Edit Pricelist Event');
 
                         $('#id').val(data.id_paket);
+                        $('#kode_paket').val(data.kode_paket);
                         $('#nama_paket').val(data.nama_paket);
                         $('#harga_paket').val(data.harga_paket);
                     },

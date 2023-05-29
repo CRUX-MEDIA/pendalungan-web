@@ -10,6 +10,19 @@ class Penyewaan extends Model
     use HasFactory;
     protected $table = 'penyewaan';
     protected $primaryKey = 'id_sewa';
+    protected $fillable = [
+        'id_penyewa',
+        'id_user',
+        'no_invoice',
+        'tgl_sewa',
+        'tgl_kembali',
+        'durasi',
+        'total',
+        'pajak',
+        'dibayar',
+        'id_status_sewa',
+        'id_jaminan'
+    ];
 
     public function user() {
         return $this->belongsTo('App\Models\User', 'id_user');

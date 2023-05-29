@@ -11,10 +11,6 @@ class RiwayatEvent extends Model
     protected $table = 'riwayat_event';
     protected $primaryKey = 'id_riwayat_event';
 
-    public function detail_riwayat_event() {
-        return $this->hasMany('App\Models\DetailRiwayatEvent', 'id_riwayat_event');
-    }
-
     public function paket_event() {
         return $this->belongsTo('App\Models\PaketEvent', 'id_paket');
     }

@@ -11,10 +11,6 @@ class Event extends Model
     protected $table = 'event';
     protected $primaryKey = 'id_event';
 
-    public function detail_event() {
-        return $this->hasMany('App\Models\DetailEvent', 'id_event');
-    }
-
     public function paket_event() {
         return $this->belongsTo('App\Models\PaketEvent', 'id_paket');
     }

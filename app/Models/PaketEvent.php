@@ -11,8 +11,8 @@ class PaketEvent extends Model
     protected $table = 'paket_event';
     protected $primaryKey = 'id_paket';
     protected $fillable = [
+        'kode_paket',
         'nama_paket',
-        'deskripsi_paket',
         'harga_paket'
     ];
 

@@ -32,10 +32,11 @@ class BarangController extends Controller
                 $no++;
                 $row = array();
                 $row[] = $no;
+                $row[] = $list->kode_barang;
                 $row[] = $list->nama_barang;
-                $row[] = $list->nama_kategori;
-                $row[] = $list->spek_barang;
+                $row[] = $list->serial_number;
                 $row[] = "Rp. ". format_uang($list->harga_sewa);
+                $row[] = $list->status == '1' ? '<span class="badge badge-success">Tersedia</span>' : '<span class="badge badge-danger">Tidak Tersedia</span>';
                 $row[] = '<a href="javascript:void(0)" class="btn btn-warning btn-sm" onclick="editForm('.$list->id_barang.')"><i class="fas fa-pencil-alt"></i></a> 
                 <a href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="deleteData('.$list->id_barang.')"><i class="fa fa-trash"></i></a>';
                 $data[] = $row;
@@ -51,10 +52,11 @@ class BarangController extends Controller
                 $no++;
                 $row = array();
                 $row[] = $no;
+                $row[] = $list->kode_barang;
                 $row[] = $list->nama_barang;
-                $row[] = $list->nama_kategori;
-                $row[] = $list->spek_barang;
+                $row[] = $list->serial_number;
                 $row[] = "Rp. ". format_uang($list->harga_sewa);
+                $row[] = $list->status == '1' ? '<span class="badge badge-success">Tersedia</span>' : '<span class="badge badge-danger">Tidak Tersedia</span>';
                 $row[] = '<a href="javascript:void(0)" class="btn btn-warning btn-sm" onclick="editForm('.$list->id_barang.')"><i class="fas fa-pencil-alt"></i></a>';
                 $data[] = $row;
             }
@@ -69,10 +71,11 @@ class BarangController extends Controller
                 $no++;
                 $row = array();
                 $row[] = $no;
+                $row[] = $list->kode_barang;
                 $row[] = $list->nama_barang;
-                $row[] = $list->nama_kategori;
-                $row[] = $list->spek_barang;
+                $row[] = $list->serial_number;
                 $row[] = "Rp. ". format_uang($list->harga_sewa);
+                $row[] = $list->status == '1' ? '<span class="badge badge-success">Tersedia</span>' : '<span class="badge badge-danger">Tidak Tersedia</span>';
                 $row[] = '';
                 $data[] = $row;
             }
@@ -102,8 +105,9 @@ class BarangController extends Controller
         if($jml < 1) {
             $barang = new Barang;
             $barang->id_kategori = $request->id_kategori;
+            $barang->kode_barang = $request->kode_barang;
             $barang->nama_barang = $request->nama_barang;
-            $barang->spek_barang = $request->spek_barang;
+            $barang->serial_number = $request->serial_number;
             $barang->harga_sewa = $request->harga_sewa;
             $barang->save();
             echo json_encode(array('msg' => 'success'));
@@ -147,8 +151,9 @@ class BarangController extends Controller
     {
         $barang = Barang::find($id);
         $barang->id_kategori = $request->id_kategori;
+        $barang->kode_barang = $request->kode_barang;
         $barang->nama_barang = $request->nama_barang;
-        $barang->spek_barang = $request->spek_barang;
+        $barang->serial_number = $request->serial_number;
         $barang->harga_sewa = $request->harga_sewa;
         $barang->update();
         echo json_encode(array('msg' => 'success'));
