@@ -16,12 +16,13 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        $level = Level::all();
+        $level = Level::where('id_level', '!=', 4)->get();
         return view('pegawai.index', compact('level'));
     }
 
     public function dataPegawai() {
         $pegawai = User::join('level', 'level.id_level', '=', 'users.id_level')
+                    ->where('level.id_level', '!=', 4)
                     ->orderBy('id', 'desc')
                     ->get();
         $no = 0;

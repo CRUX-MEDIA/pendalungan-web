@@ -19,4 +19,8 @@ class JobdescEvent extends Model
     public function detail_event() {
         return $this->hasMany('App\Models\DetailEvent', 'id_jobdesc');
     }
+
+    public function detail_riwayat_event() {
+        return $this->hasMany('App\Models\DetailRiwayatEvent', 'id_jobdesc');
+    }
 }

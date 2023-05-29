@@ -21,7 +21,7 @@
     <hr class="sidebar-divider">
     <div class="sidebar-heading">Penyewaan</div>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('penyewaan.index') }}">
             <i class="fas fa-camera"></i>
             <span>Penyewaan</span>
         </a>
@@ -90,6 +90,12 @@
     <hr class="sidebar-divider">
     <div class="sidebar-heading">Users</div>
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('pelanggan.index') }}">
+            <i class="fas fa-user"></i>
+            <span>Pelanggan</span>
+        </a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="{{ route('pegawai.index') }}">
             <i class="fas fa-user"></i>
             <span>Pegawai</span>
@@ -118,7 +124,7 @@
     <hr class="sidebar-divider">
     <div class="sidebar-heading">Penyewaan</div>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('penyewaan.index') }}">
             <i class="fas fa-camera"></i>
             <span>Penyewaan</span>
         </a>
@@ -201,7 +207,7 @@
     <hr class="sidebar-divider">
     <div class="sidebar-heading">Penyewaan</div>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('penyewaan.index') }}">
             <i class="fas fa-camera"></i>
             <span>Penyewaan</span>
         </a>

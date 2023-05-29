@@ -1,21 +1,21 @@
 @component('layouts.app')
     @slot('title')
-        Data Pricelist Event - Pendalungan Megah Solusi
+        Data Pelanggan - Pendalungan Megah Solusi
     @endslot
 
     @section('title')
-        Pricelist Event
+        Pelanggan
     @endsection
 
     @section('breadcrumb')
         @parent
-        <li class="breadcrumb-item">Pricelist Event</li>
+        <li class="breadcrumb-item">Pelanggan</li>
     @endsection
 
     @section('content')
         <div class="row">
             <div class="col-lg-12 mb-3">
-                <a href="javascript:void(0)" class="btn btn-primary" onclick="addForm()"><i class="fa fa-plus-circle"></i> Tambah Pricelist</a>
+                <a href="javascript:void(0)" class="btn btn-primary" onclick="addForm()"><i class="fa fa-plus-circle"></i> Tambah Data</a>
             </div>
         </div>
         <div class="row">
@@ -26,8 +26,10 @@
                         <thead class="thead-light">
                         <tr>
                             <th>No</th>
-                            <th>Nama</th>
-                            <th>Harga</th>
+                            <th>Nama Pelanggan</th>
+                            <th>Alamat</th>
+                            <th>Email</th>
+                            <th>HP</th>
                             <th>Aksi</th>
                         </tr>
                         </thead>
@@ -37,7 +39,7 @@
                 </div>
             </div>
         </div>
-    @include('paket_event.form')
+    @include('pelanggan.form')
     @endsection
 
     @section('script')
@@ -51,7 +53,7 @@
                     'scrollY'     : true,
                     'autoWidth'   : false,
                     "ajax" : {
-                        "url" : "{{ route('paket_event.data') }}",
+                        "url" : "{{ route('pelanggan.data') }}",
                         "type" : "GET"
                     }
                 });
@@ -59,8 +61,8 @@
                 $('#modal-form form').on('submit', function(e){
                     if(!e.isDefaultPrevented()){
                         var id = $('#id').val();
-                        if(save_method == "add") url = "{{ route('paket_event.store') }}";
-                        else url = "paket_event/"+id;
+                        if(save_method == "add") url = "{{ route('pelanggan.store') }}";
+                        else url = "pelanggan/"+id;
 
                         $.ajax({
                             url : url,
@@ -84,7 +86,8 @@
                 $('input[name=_method]').val('POST');
                 $('#modal-form').modal('show');
                 $('#modal-form form')[0].reset();
-                $('.modal-title').text('Tambah Pricelist Event');
+                $('.modal-title').text('Tambah Pelanggan');
+                $('#password').attr('disabled', false);
             }
 
             function editForm(id){
@@ -92,16 +95,18 @@
                 $('input[name=_method]').val('PATCH');
                 $('#modal-form form')[0].reset();
                 $.ajax({
-                    url : "paket_event/"+id+"/edit",
+                    url : "pelanggan/"+id+"/edit",
                     type : "GET",
                     dataType : "JSON",
                     success : function(data){
                         $('#modal-form').modal('show');
-                        $('.modal-title').text('Edit Pricelist Event');
+                        $('.modal-title').text('Edit Pelanggan');
 
-                        $('#id').val(data.id_paket);
-                        $('#nama_paket').val(data.nama_paket);
-                        $('#harga_paket').val(data.harga_paket);
+                        $('#id').val(data.id_pelanggan);
+                        $('#nama_pelanggan').val(data.nama_pelanggan);
+                        $('#alamat_pelanggan').val(data.alamat_pelanggan);
+                        $('#email_pelanggan').val(data.email_pelanggan);
+                        $('#hp_pelanggan').val(data.hp_pelanggan);
                     },
                     error : function(){
                         alert("Tidak dapat menampilkan data!");
@@ -112,7 +117,7 @@
             function deleteData(id) {
                 Swal.fire({
                     title: 'Apakah anda yakin?',
-                    text: "Data paket event akan dihapus!",
+                    text: "Data Pelanggan akan dihapus!",
                     icon: 'warning',
                     showCancelButton: true,
                     cancelButtonColor: '#d33',
@@ -121,13 +126,13 @@
                     }).then((result) => {
                     if (result.isConfirmed) {
                         $.ajax({
-                            url : "paket_event/"+id,
+                            url : "pelanggan/"+id,
                             type : "POST",
                             data : {'_method' : 'DELETE', '_token' : $('meta[name=csrf-token]').attr('content')},
                             success : function(data) {
                                 Swal.fire(
                                     'Berhasil!',
-                                    'Data paket event terhapus.',
+                                    'Data pelanggan terhapus.',
                                     'success'
                                 )
                                 table.ajax.reload();

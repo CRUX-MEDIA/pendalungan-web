@@ -19,7 +19,6 @@ return new class extends Migration
             $table->foreign('id_kategori')->references('id_kategori')->on('kategori');
             $table->string('nama_barang', 50);
             $table->string('spek_barang', 100);
-            $table->string('sn_barang', 50);
             $table->integer('harga_sewa');
             $table->timestamps();
         });

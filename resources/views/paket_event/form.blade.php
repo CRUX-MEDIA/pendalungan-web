@@ -19,12 +19,6 @@
                     </div>
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="deskripsi_paket" class="form-label">Deskripsi</label>
-                            <input type="text" id="deskripsi_paket" name="deskripsi_paket" class="form-control" required />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col mb-3">
                             <label for="harga_paket" class="form-label">Harga</label>
                             <input type="number" id="harga_paket" name="harga_paket" class="form-control" required />
                         </div>

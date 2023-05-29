@@ -86,6 +86,7 @@
                 $('#modal-form').modal('show');
                 $('#modal-form form')[0].reset();
                 $('.modal-title').text('Tambah Pegawai');
+                $('#password').attr('disabled', false);
             }
 
             function editForm(id){

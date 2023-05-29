@@ -8,12 +8,12 @@
     <meta name="author" content="">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="{{ asset('assets/img/logo.icon.svg') }}" rel="icon">
+    <link href="{{ asset('public/assets/img/logo.icon.svg') }}" rel="icon">
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- css -->
-    <link href="{{asset('assets/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('assets/css/ruang-admin.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/assets/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('public/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('public/assets/css/ruang-admin.min.css')}}" rel="stylesheet">
 </head>
 
 <body class="bg-gradient-login">
@@ -32,7 +32,7 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Masukkan Email" required autocomplete="email" autofocus>
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -40,18 +40,12 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Masukkan Password" required autocomplete="current-password">
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                        </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-checkbox small" style="line-height: 1.5rem;">
-                            <input type="checkbox" class="custom-control-input" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                            <label class="custom-control-label" for="remember">Remember Me</label>
-                            </div>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-block">
@@ -70,10 +64,10 @@
     </div>
     </div>
     <!-- Login Content -->
-    <script src="{{asset('assets/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-    <script src="{{asset('assets/js/ruang-admin.min.js')}}"></script>
+    <script src="{{asset('public/assets/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('public/assets/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+    <script src="{{asset('public/assets/js/ruang-admin.min.js')}}"></script>
 </body>
 
 </html>

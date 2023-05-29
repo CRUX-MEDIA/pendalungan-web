@@ -29,7 +29,6 @@
                             <th>Nama Barang</th>
                             <th>Nama kategori</th>
                             <th>Spesifikasi</th>
-                            <th>SN</th>
                             <th>Harga Sewa</th>
                             <th>Aksi</th>
                         </tr>
@@ -106,7 +105,6 @@
                         $('#nama_barang').val(data.nama_barang);
                         $('#id_kategori').val(data.id_kategori);
                         $('#spek_barang').val(data.spek_barang);
-                        $('#sn_barang').val(data.sn_barang);
                         $('#harga_sewa').val(data.harga_sewa);
                     },
                     error : function(){

@@ -18,4 +18,8 @@ class Barang extends Model
     public function detail_sewa() {
         return $this->hasMany('App\Models\DetailSewa', 'id_barang');
     }
+
+    public function detail_riwayat_penyewaan() {
+        return $this->hasMany('App\Models\DetailRiwayatPenyewaan', 'id_barang');
+    }
 }

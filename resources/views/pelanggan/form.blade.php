@@ -13,31 +13,26 @@
                     <input type="hidden" id="id" name="id"/>
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="nama_barang" class="form-label">Nama Barang</label>
-                            <input type="text" id="nama_barang" name="nama_barang" class="form-control" autofocus required />
+                            <label for="nama_pelanggan" class="form-label">Nama Pelanggan</label>
+                            <input type="text" id="nama_pelanggan" name="nama_pelanggan" class="form-control" autofocus required />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="id_kategori">Kategori</label>
-                            <select class="form-control" id="id_kategori" name="id_kategori" required>
-                                <option value="">Pilih Kategori</option>
-                                @foreach($kategori as $data)
-                                    <option value="{{ $data->id_kategori }}">{{ $data->nama_kategori }}</option>
-                                @endforeach
-                            </select>
+                            <label for="alamat_pelanggan" class="form-label">Alamat</label>
+                            <input type="text" id="alamat_pelanggan" name="alamat_pelanggan" class="form-control" required />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="spek_barang" class="form-label">Spek Barang</label>
-                            <input type="text" id="spek_barang" name="spek_barang" class="form-control" required />
+                            <label for="email_pelanggan" class="form-label">Email</label>
+                            <input type="email" id="email_pelanggan" name="email_pelanggan" class="form-control" required />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="harga_sewa" class="form-label">Harga Sewa</label>
-                            <input type="number" id="harga_sewa" name="harga_sewa" class="form-control" required />
+                            <label for="hp_pelanggan" class="form-label">No Hp</label>
+                            <input type="text" id="hp_pelanggan" name="hp_pelanggan" class="form-control" required />
                         </div>
                     </div>
                     <div class="modal-footer">

@@ -11,14 +11,17 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link href="{{ asset('assets/img/logo/icon.svg') }}" rel="icon">
+    <link href="{{ asset('public/assets/img/logo/icon.svg') }}" rel="icon">
     <title>{{ $title?? config('app.name') }}</title>
 
     <!-- css -->
-    <link href="{{asset('assets/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('assets/css/ruang-admin.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/assets/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('public/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('public/assets/css/ruang-admin.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/assets/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet"> 
+    <link href="{{asset('public/assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/assets/vendor/bootstrap-touchspin/css/jquery.bootstrap-touchspin.css')}}" rel="stylesheet" >
+    <link href="{{asset('public/assets/vendor/clock-picker/clockpicker.css')}}" rel="stylesheet">
     @yield('css')
 
 </head>
@@ -28,7 +31,7 @@
         <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('home')}}">
                 <div class="sidebar-brand-icon">
-                    <img src="{{ asset('assets/img/logo/logo.webp') }}">
+                    <img src="{{ asset('public/assets/img/logo/logo.webp') }}">
                 </div>
                 <div class="sidebar-brand-text mx-3">Pendalungan</div>
             </a>
@@ -66,7 +69,7 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        <img class="img-profile rounded-circle" src="{{ asset('assets/img/boy.png') }}" style="max-width: 60px">
+                        <img class="img-profile rounded-circle" src="{{ asset('public/assets/img/boy.png') }}" style="max-width: 60px">
                         <span class="ml-2 d-none d-lg-inline text-white small">{{ Auth::user()->name }}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -144,15 +147,20 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <script src="{{asset('assets/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-    <script src="{{asset('assets/js/ruang-admin.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/datatables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
-    {{-- <script src="{{asset('assets/vendor/chart.js/Chart.min.js')}}"></script>
-    <script src="{{asset('assets/js/demo/chart-area-demo.js')}}"></script>  --}}
+    <script src="{{asset('public/assets/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('public/assets/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+    <script src="{{asset('public/assets/js/ruang-admin.min.js')}}"></script>
+    <script src="{{asset('public/assets/vendor/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('public/assets/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    {{-- <script src="{{asset('public/assets/vendor/chart.js/Chart.min.js')}}"></script>
+    <script src="{{asset('public/assets/js/demo/chart-area-demo.js')}}"></script>  --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Bootstrap Datepicker -->
+    <script src="{{asset('public/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{asset('public/assets/vendor/bootstrap-touchspin/js/jquery.bootstrap-touchspin.js')}}"></script>
+    <!-- ClockPicker -->
+    <script src="{{asset('public/assets/vendor/clock-picker/clockpicker.js')}}"></script>
     @yield('script')
 </body>
 </html>

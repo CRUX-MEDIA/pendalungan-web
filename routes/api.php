@@ -1,13 +1,17 @@
 <?php
 
+use App\Http\Controllers\API\BarangController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\PelangganController;
+use App\Http\Controllers\API\UserController;
 
-Route::post('register', [PelangganController::class, 'register']);
-Route::post('login', [PelangganController::class, 'login']);
+Route::post('register', [UserController::class, 'register']);
+Route::post('login', [UserController::class, 'login']);
 
-Route::middleware('auth:sanctum')->group(function () {
-    Route::post('profile', [PelangganController::class, 'profile']);
-    Route::post('logout', [PelangganController::class, 'logout']);
+Route::middleware('auth:api')->group(function () {
+    Route::post('profile', [UserController::class, 'profile']);
+    Route::post('logout', [UserController::class, 'logout']);
+    Route::get('barang', [BarangController::class, 'dataBarang']);
+    Route::post('editprofile/{uuid}', [UserController::class, 'editprofile']);
+    Route::post('editpassword/{uuid}', [UserController::class, 'editpassword']);
 });
